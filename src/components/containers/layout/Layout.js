@@ -10,7 +10,7 @@ import axios from 'axios';
 import createUrl from '../../lib/requests/createUrl.ts';
 import getGenres from '../../lib/requests/getGenres.ts';
 // Custom Components
-import MoviesList from './movies/list/MoviesList';
+import MoviesList from '../movies/list/MoviesList';
 
 function Search() {
   // States

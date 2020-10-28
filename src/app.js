@@ -7,7 +7,7 @@ import '@babel/polyfill';
 import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
 // Custom Components
-import Searcher from './components/containers/search';
+import Layout from './components/containers/layout/Layout';
 // Styles
 import '../src/assets/app.scss';
 
@@ -16,7 +16,7 @@ const App = () => {
     <>
       <CssBaseline />
       <Container className="containerPadding">
-        <Searcher />
+        <Layout />
       </Container>
     </>
   );
