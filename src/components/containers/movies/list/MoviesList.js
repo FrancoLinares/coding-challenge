@@ -8,7 +8,6 @@ import Grid from '@material-ui/core/Grid';
 import '../../../../assets/movieList.scss';
 
 function MoviesList({ movies }) {
-  console.log('movies', movies);
   return (
     <>
       <div className="cardsContainer">

@@ -3,16 +3,16 @@ import React, { useState, useEffect, useRef } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Alert from '@material-ui/lab/Alert';
 // Styles
-import '../../assets/search.scss';
+import '../../../assets/search.scss';
 // External lib
 import axios from 'axios';
 // Lib
-import createUrl from '../../lib/requests/createUrl.ts';
-import getGenres from '../../lib/requests/getGenres.ts';
+import createUrl from '../../../lib/requests/createUrl.ts';
+import getGenres from '../../../lib/requests/getGenres.ts';
 // Custom Components
 import MoviesList from '../movies/list/MoviesList';
 
-function Search() {
+function Layout() {
   // States
   const [searchText, setSearchText] = useState('');
   const [searchError, setSearchError] = useState(null);
@@ -45,6 +45,7 @@ function Search() {
         if (searchText.length === 0) {
           setSearchError(null);
         } else {
+          setMovies(null);
           setSearchError('Write a little bit more');
         }
       }
@@ -64,7 +65,6 @@ function Search() {
 
   const getGenresHandle = async () => {
     const res = await getGenres();
-    console.log(res.data.genres[0].id);
     const genreById = res.data.genres.reduce(
       (map, genre) => ({
         ...map,
@@ -94,6 +94,7 @@ function Search() {
 
   return (
     <>
+      <h1>Find movies</h1>
       <TextField
         fullWidth
         id="movie"
@@ -113,6 +114,4 @@ function Search() {
   );
 }
 
-Search.propTypes = {};
-
-export default Search;
+export default Layout;
